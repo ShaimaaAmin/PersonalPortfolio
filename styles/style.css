@@ -1,0 +1,442 @@
+:root{
+  --text-color:#f0f0f0;
+  --navbar-section:#be3144;
+  --welcome-section:black;
+  --projects-section:#45567d;
+  --contacts-section:#303841;
+  --active-angle: #ff7f50;;
+}
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+/* START OF NAVBAR  */
+#nav-section{
+  background-color: var(--navbar-section);
+  width:100%;
+  top:0;
+  max-height: 100px;
+  position: fixed;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+header{
+  display: flex;
+  justify-content: flex-end;
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 2rem;
+}
+ul>li{
+  list-style: none;
+  padding:2rem;
+}
+ul>li>a{
+  text-decoration: none;
+  font-size: 2.2rem;
+  color:white;
+}
+/* END OF NAVBAR  */
+/* START OF WELCOME SECTION  */
+#welcome-section{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  height: 100vh;
+  background-color: var(--welcome-section);
+  text-align: center;
+}
+#welcome-section>div>h1{
+  font-size: 4rem;
+}
+#welcome-section>div>h1::after {
+  content: "";
+  font-style: italic;
+  font-size: 4rem;
+  font-weight: 400;
+  animation: anim-write-Shaimaa-Amin 2s ease-in-out infinite;
+}
+#welcome-section>div>p {
+  color:var(--navbar-section);
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#welcome-section>div>p::after {
+  content: "";
+  animation: anim-write-web-developer 2s ease-in-out infinite;
+}
+/* END OF WELCOME SECTION  */
+/* START OF PROJECTS SECTION  */
+#projects{
+  padding:10rem 2rem;
+  display: flex;
+  gap:6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--projects-section);
+  text-align: center;
+}
+#projects>h2{
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5rem;
+  border-bottom: .2rem solid var(--text-color);
+}
+#projects>.cls-projects-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+}
+.cls-projects-container .cls-project{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--contacts-section);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding-bottom: 1.5rem;
+}
+.cls-projects-container .cls-project a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.cls-projects-container .cls-project a img{
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+}
+.cls-project p::before {
+  content: "";
+  transition: color 0.3s ease-out;
+}
+
+.cls-project p::after {
+  content: "";
+  transition: color 0.3s ease-out;
+}
+.cls-project:hover p::before {
+  content:"<";
+  color:var(--active-angle);
+}
+.cls-project:hover p::after {
+  content: "/>";
+  color: var(--active-angle);
+}
+
+.cls-show-all-btn{
+  font-size: 2rem;
+  background: var(--contacts-section);
+}
+.cls-show-all-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  padding:10px 20px;
+  background: var(--contacts-section);
+  transition: background 0.3s ease-out;
+}
+.cls-show-all-btn:hover {
+  background: var(--navbar-section);
+}
+.cls-show-all-btn>i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+.cls-show-all-btn:hover>i {
+  transform: translateX(2px);
+}
+/* END OF PROJECTS SECTION  */
+/* START OF CONTACTS SECTION  */
+#contacts{
+  padding: 0px 10rem;
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--contacts-section);
+  text-align: center;
+}
+#contacts h2 {
+  font-size: 6rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+#contacts p {
+  font-style: italic;
+  font-weight: lighter;
+  text-align: center;
+}
+#contacts .cls-contacts-links{
+  display: flex;
+  /* gap: 4rem; */
+  /* max-width: 980px; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom:2rem;
+}
+#contacts .cls-contacts-links a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+#contacts .cls-contacts-links .cls-social-contacts{
+  font-size: 2.4rem;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+}
+#contacts .cls-contacts-links .cls-social-contacts:hover {
+  transform: translateY(8px);
+}
+/* END OF CONTACTS SECTION  */
+/* START OF FOOTER SECTION  */
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: var(--contacts-section);
+  border-top: 4px solid var(--navbar-section);
+  font-size: 1.6rem;
+}
+footer p{
+  padding: 2rem;
+}
+footer a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+/* END OF FOOTER SECTION  */
+
+
+/*  */
+/* Set font size for easy rem calculations
+* default document font size = 16px, 1rem = 16px, 100% = 16px
+* (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+*/
+/* font-size: 62.5%; */
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  body {
+    font-size: 1.2rem;
+  }
+  nav {
+    justify-content: center;
+  } 
+  nav ul {
+    margin: 0 1rem;
+  }
+  #projects>h2 {
+    font-size: 4rem;
+  }
+  #contacts h2 {
+    font-size: 4rem;
+  }
+#contacts .cls-contacts-links{
+  flex-wrap: wrap;
+}
+#contacts .cls-contacts-links .cls-social-contacts {
+  font-size: .5rem;
+  width:33%;
+  border-radius: 2px;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+}
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 30.625em) {
+  #projects {
+    padding: 6rem 1rem;
+  }
+  .cls-projects-container .cls-project{
+    width:100%;
+  }
+}
+
+@keyframes anim-write-Shaimaa-Amin {
+  0% {
+    content: " S|";
+    color: #e65f78;
+  }
+
+  10% {
+    content: " Sh|";
+    color: #e65f78;
+  }
+
+  20% {
+    content: " Sha|";
+    color: #e65f78;
+  }
+
+  30% {
+    content: " Shai|";
+    color: #e65f78;
+  }
+
+  40% {
+    content: " Shaim|";
+    color: #e65f78;
+  }
+
+  50% {
+    content: " Shaima|";
+    color: #e65f78;
+  }
+
+  60% {
+    content: " Shaimaa |";
+    color: #e65f78;
+  }
+
+  70% {
+    content: " Shaimaa A|";
+    color: #e65f78;
+  }
+
+  80% {
+    content: " Shaimaa Am|";
+    color: #e65f78;
+  }
+
+  90% {
+    content: " Shaimaa Ami|";
+    color: #e65f78;
+  }
+
+  100% {
+    content: " Shaimaa Amin|";
+    color: #e65f78;
+  }
+
+}
+
+@keyframes anim-write-web-developer {
+  0% {
+    content: " a |";
+    color: #e65f78;
+  }
+
+  10% {
+    content: "a w|";
+    color: #e65f78;
+  }
+
+  20% {
+    content: "a we|";
+    color: #e65f78;
+  }
+
+  25% {
+    content: "a web |";
+    color: #e65f78;
+  }
+
+  30% {
+    content: "a web d|";
+    color: #e65f78;
+  }
+
+  40% {
+    content: "a web de|";
+    color: #e65f78;
+  }
+
+  45% {
+    content: "a web dev|";
+    color: #e65f78;
+  }
+
+  50% {
+    content: "a web deve|";
+    color: #e65f78;
+  }
+
+  60% {
+    content: "a web devel|";
+    color: #e65f78;
+  }
+
+  70% {
+    content: "a web develo|";
+    color: #e65f78;
+  }
+
+  80% {
+    content: "a web develop|";
+    color: #e65f78;
+  }
+  90% {
+    content: "a web develope|";
+    color: #e65f78;
+  }
+100% {
+  content: "a web developer|";
+  color: #e65f78;
+}
+
+}
